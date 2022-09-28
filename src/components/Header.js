@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
 
+import Buscador from "./Buscador";
+
 const Header = () =>{
     return(
-        <header>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/listado">
-                            Listado
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/contacto">
-                            Contacto
-                        </Link>
-                    </li>
-                </ul>
+        <header className="header">
+            <nav className="container content-center">
+                <div>
+                    <ul className="header-ul">
+                        <li className="item-header">
+                            <Link to="/" className="links">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="item-header">
+                            <Link to="/listado" className="links">
+                                Listado
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+                <Buscador/>
             </nav>
         </header>
     );

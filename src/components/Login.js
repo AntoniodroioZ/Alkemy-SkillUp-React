@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install @sweetalert/with-react --force
 import swAlert from '@sweetalert/with-react'
 
-import { useNavigate   } from 'react-router-dom'
+import { useNavigate, Navigate  } from 'react-router-dom'
 
 const Login = () =>{
 
@@ -46,23 +46,29 @@ const Login = () =>{
             // console.log(res.data); 
             const token = res.data.token;
             console.log(token);
-            localStorage.setItem('token',token); //localStorage solo maneja strings
+            // localStorage.setItem('token',token); //localStorage solo maneja strings
+            sessionStorage.setItem('token',token);
             navigate("../listado", { replace: true });
         });
     }
-
+    let token = sessionStorage.getItem('token');
 
     return(
         <>
+            { token &&  <Navigate to="/listado"/>}
             
-            <h2>Formulario de Login</h2>
-            <form onSubmit={submitHandler}>
-                <input type="email" name="email" id="email" placeholder="Email"/>
-                <br />
-                <input type="password" name="password" id="password" placeholder="Contraseña"/>
-                <br />
-                <button type="submit">Ingresar</button>
-            </form>
+            <div className="container">
+                <h2>Formulario de Login</h2>
+                <form onSubmit={submitHandler}>
+                    <p>Ingresa tu correo electronico:</p>
+                    <input className="form-control inputs" type="email" name="email" id="email" placeholder="Email"/>
+                    {/* <br /> */}
+                    <p>Ingresa tu contraseña</p>
+                    <input className="form-control inputs" type="password" name="password" id="password" placeholder="Contraseña"/>
+                    <br />
+                    <button className="btn btn-success" type="submit">Ingresar</button>
+                </form>
+            </div>
         </>
     );
 }

@@ -1,16 +1,16 @@
 const Footer = () =>{
     return(
-        <footer>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com" rel="noopener roreferrer">IG</a>
+        <footer className="footer">
+            <nav className="">
+                <ul className="footer-ul">
+                    <li className="item-footer">
+                        <a className="links" href="https://www.instagram.com" rel="noopener roreferrer">IG</a>
                     </li>
-                    <li>
-                        <a href="https://www.facebook.com" rel="noopener roreferrer">Facebook</a>
+                    <li className="item-footer">
+                        <a className="links" href="https://www.facebook.com" rel="noopener roreferrer">Facebook</a>
                     </li>
-                    <li>
-                        <a href="https://www.antoniodroios.com" rel="noopener roreferrer">Sitio web</a>
+                    <li className="item-footer">
+                        <a className="links" href="https://www.antoniodroios.com" rel="noopener roreferrer">Sitio web</a>
                     </li>
                 </ul>
             </nav>
